@@ -1,0 +1,237 @@
+/* Start Variables */
+:root {
+    --clr-main-bg: hsl(222, 26%, 31%);
+    --clr-toggle-bg: hsl(223, 31%, 20%);
+    --clr-screen-bg: hsl(224, 36%, 15%);
+
+    --clr-key-reset-bg: hsl(225, 21%, 49%);
+    --clr-key-reset-shadow: hsl(224, 28%, 35%);
+    --clr-key-egal-bg: hsl(6, 63%, 50%);
+    --clr-key-egal-shadow: hsl(6, 70%, 34%);
+    --clr-keys-bg: hsl(30, 25%, 89%);
+    --clr-keys-shadow: hsl(28, 16%, 65%);
+
+    --clr-keys-text-primary: hsl(221, 14%, 31%);
+    --clr-keys-text-secondry: hsl(0, 0%, 100%);
+    --clr-global-text : hsl(0, 0%, 100%);
+
+    --fs-normal: clamp(1rem, 2.5vw, 1.125rem);
+    --fs-heading: clamp(2rem, 3.5vw, 2.5rem);
+    --fs-sub-heading: clamp(1.375rem, 3vw, 1.5rem);
+
+    --fw-normal: 700;
+
+    --main-padding: 1rem;
+    --main-margin:1.5rem;
+
+    --border-radius:0.25rem ;
+
+    --main-transtion: 0.3s
+}
+.theme-2 {
+    --clr-main-bg: hsl(0, 0%, 90%);
+    --clr-toggle-bg: hsl(0, 5%, 81%);
+    --clr-screen-bg: hsl(0, 0%, 93%);
+
+    --clr-key-reset-bg: hsl(185, 42%, 37%);
+    --clr-key-reset-shadow: hsl(185, 58%, 25%);
+    --clr-key-egal-bg: hsl(25, 98%, 40%);
+    --clr-key-egal-shadow: hsl(25, 99%, 27%);
+    --clr-keys-bg: hsl(45, 7%, 89%);
+    --clr-keys-shadow: hsl(35, 11%, 61%);
+
+    --clr-keys-text-primary: hsl(60, 10%, 19%);
+    --clr-keys-text-secondry: hsl(0, 0%, 100%);
+    --clr-global-text : hsl(60, 10%, 19%);
+}
+
+.theme-3 {
+    --clr-main-bg: hsl(268, 75%, 9%);
+    --clr-toggle-bg: hsl(268, 71%, 12%);
+    --clr-screen-bg: hsl(268, 71%, 12%);
+
+    --clr-key-reset-bg: hsl(281, 89%, 26%);
+    --clr-key-reset-shadow: hsl(285, 91%, 52%);
+    --clr-key-egal-bg: hsl(176, 100%, 44%);
+    --clr-key-egal-shadow: hsl(177, 92%, 70%);
+    --clr-keys-bg: hsl(268, 47%, 21%);
+    --clr-keys-shadow: hsl(290, 70%, 36%);
+
+    --clr-keys-text-primary: hsl(52, 100%, 62%);
+    --clr-keys-text-secondry: hsl(198, 20%, 13%);
+    --clr-global-text : hsl(52, 100%, 62%);
+}
+
+/* End Variables */
+
+
+/* Start Global Rules */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-size: 20px;
+}
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: var(--fw-normal);
+    font-size: var(--fs-normal);
+    background-color: var(--clr-main-bg);
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+button{
+    border: none;
+}
+.grid-span-2{
+    grid-column: span 2;
+}
+
+/* end Global Rules */
+.container{
+    padding: var(--main-padding);
+    background-color: var(--clr-White);
+    display: grid;
+    gap: 1rem;
+
+}
+@media only screen and (min-width:768px){
+    .container{
+       width: 50%;
+    }
+}
+
+.container .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .header .themes{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+   color: var(--clr-global-text);
+}
+.container .header .themes p{
+  font-size: 0.5rem;
+}
+.container .header .themes .toggle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.25rem;
+    background-color: var(--clr-toggle-bg);
+    padding: 0.25rem;
+    border-radius: 0.75rem;
+    -webkit-border-radius: 0.75rem;
+    -moz-border-radius: 0.75rem;
+    -ms-border-radius: 0.75rem;
+    -o-border-radius: 0.75rem;
+}
+.container .header .radio-btn{
+    position: relative;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.container .header .radio-btn.checked{
+    background-color: var(--clr-key-egal-bg);
+}
+.container .header .radio-btn::before{
+    content: "1";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-size: 0.5rem;
+    transform: translate(-50%,calc(-0.4rem - 100%));
+    -webkit-transform: translate(-50%,calc(-0.4rem - 100%));
+    -moz-transform: translate(-50%,calc(-0.4rem - 100%));
+    -ms-transform: translate(-50%,calc(-0.4rem - 100%));
+    -o-transform: translate(-50%,calc(-0.4rem - 100%));
+}
+.container section h2{
+    font-size: 1rem;
+    color: var(--clr-global-text);
+}
+/* radius */
+.container .screen,.container .keys,.container .keys button{
+    border-radius: var(--border-radius);
+    -webkit-border-radius: var(--border-radius);
+    -moz-border-radius: var(--border-radius);
+    -ms-border-radius: var(--border-radius);
+    -o-border-radius: var(--border-radius);
+}
+.container .screen{
+    height: 3rem;
+    background-color: var(--clr-screen-bg);
+    padding: var(--main-padding);
+    color: var(--clr-global-text);
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.container .screen P{
+    font-size: var(--fs-sub-heading);
+    text-align: right;
+    width: 100%;
+}
+.container .keys{
+    display: grid;
+    grid-template-columns: repeat(4,minmax(0,1fr));
+    grid-template-rows: repeat(4,1fr);
+    gap: 1rem;
+    padding: var(--main-padding);
+    background-color: var(--clr-toggle-bg);
+}
+.container .keys button{
+    background-color: var(--clr-keys-bg);
+    color: var(--clr-keys-text-primary);
+    padding: .25rem;
+    text-align: center;
+    cursor: pointer;
+}
+.container .keys button:active{
+    transform: translateY(2px);
+    -webkit-transform: translateY(2px);
+    -moz-transform: translateY(2px);
+    -ms-transform: translateY(2px);
+    -o-transform: translateY(2px);
+}
+.container .keys button:not(:where(.secondry-key, .egal-key)){
+    box-shadow: 0 3px 0px var(--clr-keys-shadow);
+}
+.container .keys button:not(:where(.secondry-key, .egal-key)):active{
+    box-shadow: 0 1px 0px var(--clr-keys-shadow);
+}
+body.theme-3 .secondry-key{
+    --clr-keys-text-secondry: hsl(0, 0%, 100%);
+}
+.container .keys button.secondry-key{
+    background-color: var(--clr-key-reset-bg);
+    color: var(--clr-keys-text-secondry);
+    box-shadow: 0 3px 0px var(--clr-key-reset-shadow);
+}
+.container .keys button.secondry-key:active{
+    box-shadow: 0 1px 0px var(--clr-key-reset-shadow);
+}
+
+.container .keys button.egal-key{
+    background-color: var(--clr-key-egal-bg);
+    color: var(--clr-keys-text-secondry);
+    box-shadow: 0 3px 0px var(--clr-key-egal-shadow);
+}
+.container .keys button.egal-key:active{
+    box-shadow: 0 1px 0px var(--clr-key-egal-shadow);
+}
